@@ -1,16 +1,18 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, MessageCircle, ShoppingCart, X } from "lucide-react";
 import { navLinks } from "../data/products";
 import logo from "../assets/logo_rgf.png";
+import { useCart } from "./CartContext";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { count, openCart } = useCart();
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md border-b">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        
+
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
           <img
@@ -32,28 +34,62 @@ export function Header() {
             </a>
           ))}
 
-          {/* CTA */}
+          {/* CTA WhatsApp */}
           <a
             href="https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20cotizar%20un%20repuesto"
             target="_blank"
+            rel="noopener noreferrer"
             className="rounded-xl bg-[#981a20] px-4 py-2 text-sm font-semibold text-white hover:bg-[#133e87] transition"
           >
             Cotizar
           </a>
+
+          {/* Cart button */}
+          <button
+            onClick={openCart}
+            aria-label="Abrir carrito"
+            className="relative rounded-xl border p-2 text-gray-700 hover:bg-gray-50 transition"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {count > 0 && (
+              <motion.span
+                key={count}
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#981a20] text-[10px] font-bold text-white"
+              >
+                {count > 9 ? "9+" : count}
+              </motion.span>
+            )}
+          </button>
         </nav>
 
-        {/* Mobile Button */}
-        <button
-          className="md:hidden"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        {/* Mobile: cart + hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={openCart}
+            aria-label="Abrir carrito"
+            className="relative rounded-xl border p-2 text-gray-700"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {count > 0 && (
+              <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#981a20] text-[10px] font-bold text-white">
+                {count > 9 ? "9+" : count}
+              </span>
+            )}
+          </button>
+
+          <button
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -81,6 +117,7 @@ export function Header() {
               <a
                 href="https://wa.me/521XXXXXXXXXX"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#981a20] px-3 py-2 text-sm font-semibold text-white"
               >
                 <MessageCircle className="h-4 w-4" />
