@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 import type { Product } from "../data/products";
 
 export interface CartItem {
@@ -9,8 +9,8 @@ export interface CartItem {
 interface CartContextValue {
   items: CartItem[];
   addItem: (product: Product) => void;
-  removeItem: (productId: string) => void;
-  updateQty: (productId: string, delta: number) => void;
+  removeItem: (productId: number) => void;
+  updateQty: (productId: number, delta: number) => void;
   clearCart: () => void;
   total: number;
   count: number;
@@ -21,9 +21,33 @@ interface CartContextValue {
 
 const CartContext = createContext<CartContextValue | null>(null);
 
+const STORAGE_KEY = "rgf_cart";
+
+function loadCart(): CartItem[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as CartItem[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveCart(items: CartItem[]) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  } catch {
+    // storage not available
+  }
+}
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>(loadCart);
   const [isOpen, setIsOpen] = useState(false);
+
+  // Persist to localStorage on every change
+  useEffect(() => {
+    saveCart(items);
+  }, [items]);
 
   const addItem = useCallback((product: Product) => {
     setItems((prev) => {
@@ -38,11 +62,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setIsOpen(true);
   }, []);
 
-  const removeItem = useCallback((productId: string) => {
+  const removeItem = useCallback((productId: number) => {
     setItems((prev) => prev.filter((i) => i.product.id !== productId));
   }, []);
 
-  const updateQty = useCallback((productId: string, delta: number) => {
+  const updateQty = useCallback((productId: number, delta: number) => {
     setItems((prev) =>
       prev
         .map((i) =>
