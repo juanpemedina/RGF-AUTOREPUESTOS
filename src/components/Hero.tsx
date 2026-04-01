@@ -4,7 +4,7 @@ import { ChevronRight, ShieldCheck, Wrench } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-tr from-[#133e87]/20 to-transparent blur-3xl" />

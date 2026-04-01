@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SlidersHorizontal, X } from "lucide-react";
+import { SlidersHorizontal, X, Search} from "lucide-react";
 import { products, CATEGORIES, BRANDS } from "../data/products";
 import type { Category, Brand } from "../data/products";
 import { ProductCard } from "./ProductCard";
@@ -13,6 +13,7 @@ export function CatalogPage() {
   const [activeCategories, setActiveCategories] = useState<Category[]>([]);
   const [activeBrands, setActiveBrands] = useState<Brand[]>([]);
   const [showFilters, setShowFilters] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleCategory = (cat: Category) =>
     setActiveCategories((prev) =>
@@ -31,15 +32,16 @@ export function CatalogPage() {
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
-      const catOk =
-        activeCategories.length === 0 || activeCategories.includes(p.category);
-      const brandOk =
-        activeBrands.length === 0 || activeBrands.includes(p.brand);
-      return catOk && brandOk;
+      const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const catOk = activeCategories.length === 0 || activeCategories.includes(p.category);
+      const brandOk = activeBrands.length === 0 || activeBrands.includes(p.brand);
+      const searchOk = searchQuery === "" || matchesSearch;
+      
+      return catOk && brandOk && searchOk;
     });
-  }, [activeCategories, activeBrands]);
+  }, [activeCategories, activeBrands, searchQuery]);
 
-  const hasFilters = activeCategories.length > 0 || activeBrands.length > 0;
+  const hasFilters = activeCategories.length > 0 || activeBrands.length > 0 || searchQuery !== "";
 
   return (
     <>
@@ -54,9 +56,12 @@ export function CatalogPage() {
               Catálogo de repuestos
             </h1>
             <p className="mt-2 text-gray-600">
-              {filtered.length} producto{filtered.length !== 1 ? "s" : ""}{" "}
-              encontrado{filtered.length !== 1 ? "s" : ""}
+              {filtered.length} producto{filtered.length !== 1 ? "s" : ""} encontrado{filtered.length !== 1 ? "s" : ""}              encontrado{filtered.length !== 1 ? "s" : ""}
             </p>
+            {/* ── BARRA DE BÚSQUEDA ────────────────────────────────────────── */}
+            <div className="mt-6 max-w-md">
+              <SearchBar value={searchQuery} onChange={setSearchQuery} />
+            </div>
           </div>
         </div>
 
@@ -199,6 +204,36 @@ export function CatalogPage() {
     </>
   );
 }
+// ── Search bar ───────────────────────────────────────────────────────────────
+interface SearchBarProps {
+  value: string;
+  onChange: (val: string) => void;
+}
+
+function SearchBar({ value, onChange }: SearchBarProps) {
+  return (
+    <div className="relative group">
+      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <Search className="h-4 w-4 text-gray-400 group-focus-within:text-[#981a20] transition-colors" />
+      </div>
+      <input
+        type="text"
+        placeholder="Buscar productos"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="block w-full rounded-xl border border-gray-200 bg-gray-50 py-2.5 pl-10 pr-10 text-sm transition-all focus:border-[#981a20] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#981a20]/5"
+      />
+      {value && (
+        <button
+          onClick={() => onChange("")}
+          className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      )}
+    </div>
+  );
+}
 
 // ── Filter panel ─────────────────────────────────────────────────────────────
 interface FilterPanelProps {
@@ -221,6 +256,7 @@ function FilterPanel({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
+        
         <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
           Filtrar por
         </h3>

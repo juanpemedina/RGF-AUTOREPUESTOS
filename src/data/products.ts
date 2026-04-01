@@ -342,8 +342,8 @@ export const products: Product[] = [
 ];
 
 export const navLinks = [
-  { href: "/catalogo", label: "Productos" },
-  { href: "/#popular", label: "Populares" },
+  {href: "/#hero", label: "Inicio" },
+  {href: "/#popular", label: "Populares" },
   { href: "/#bestsellers", label: "Más Vendidos" },
   { href: "/#features", label: "¿Por qué nosotros?" },
   { href: "/#ubicacion", label: "Ubicación" },
