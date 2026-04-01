@@ -56,7 +56,7 @@ export function CatalogPage() {
               Catálogo de repuestos
             </h1>
             <p className="mt-2 text-gray-600">
-              {filtered.length} producto{filtered.length !== 1 ? "s" : ""} encontrado{filtered.length !== 1 ? "s" : ""}              encontrado{filtered.length !== 1 ? "s" : ""}
+              {filtered.length} producto{filtered.length !== 1 ? "s" : ""} encontrado{filtered.length !== 1 ? "s" : ""} encontrado{filtered.length !== 1 ? "s" : ""}
             </p>
             {/* ── BARRA DE BÚSQUEDA ────────────────────────────────────────── */}
             <div className="mt-6 max-w-md">
@@ -142,7 +142,7 @@ export function CatalogPage() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 xl:grid-cols-3">
                   {filtered.map((p, i) => (
                     <ProductCard
                       key={p.id}
