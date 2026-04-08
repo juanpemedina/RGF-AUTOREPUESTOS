@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SlidersHorizontal, X, Search} from "lucide-react";
 import { products, CATEGORIES, BRANDS } from "../data/products";
 import type { Category, Brand } from "../data/products";
-import { ProductCard } from "./ProductCard";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { CartDrawer } from "./CartDrawer";
-import { BackToTop } from "./BackToTop";
+import { ProductCard } from "../components/catalog/ProductCard";
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
+import { CartDrawer } from "../components/CartDrawer";
+import { BackToTop } from "../components/BackToTop";
 
 export function CatalogPage() {
   const [activeCategories, setActiveCategories] = useState<Category[]>([]);
