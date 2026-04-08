@@ -1,6 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, MessageCircle, ShoppingCart, X } from "lucide-react";
+import { Menu, BookOpenText, ShoppingCart, X } from "lucide-react";
 import { navLinks } from "../data/products";
 import logo from "../assets/logo_rgf.png";
 import { useCart } from "./CartContext";
@@ -34,14 +34,14 @@ export function Header() {
             </a>
           ))}
 
-          {/* CTA WhatsApp */}
+          {/* Catálogo Productos */}
           <a
-            href="https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20cotizar%20un%20repuesto"
+            href="/catalogo"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl bg-[#981a20] px-4 py-2 text-sm font-semibold text-white hover:bg-[#133e87] transition"
           >
-            Cotizar
+            Catálogo
           </a>
 
           {/* Cart button */}
@@ -115,13 +115,13 @@ export function Header() {
 
               {/* CTA Mobile */}
               <a
-                href="https://wa.me/521XXXXXXXXXX"
+                href="/catalogo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#981a20] px-3 py-2 text-sm font-semibold text-white"
               >
-                <MessageCircle className="h-4 w-4" />
-                Cotizar por WhatsApp
+                <BookOpenText className="h-4 w-4" />
+                Catálogo
               </a>
             </div>
           </motion.div>

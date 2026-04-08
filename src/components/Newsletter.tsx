@@ -1,20 +1,22 @@
 import React from "react";
+import { MapPin } from 'lucide-react';
 import { Section } from "./Section";
 
 export function Newsletter() {
   return (
     <Section
       id="ubicacion"
+      icon={<MapPin />} 
       eyebrow="Ubicación"
       title="Visítanos"
       description="Puedes visitarnos en nuestra sucursal o ubicarnos fácilmente en el mapa."
     >
       <div className="mx-auto max-w-4xl space-y-6">
-        
-        {/* Texto */}
-        <p className="text-center text-gray-700">
-          Torre Adamant 1, Puebla, AQUI VA LA UBI REAL.
-        </p>
+        <div className="flex items-center justify-center gap-2">
+          <p className="text-center text-gray-700">
+            Torre Adamant 1, Puebla, AQUI VA LA UBI REAL.
+          </p>
+        </div>
 
         {/* Mapa */}
         <div className="overflow-hidden rounded-2xl shadow-md">

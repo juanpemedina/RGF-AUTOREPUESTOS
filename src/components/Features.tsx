@@ -1,6 +1,7 @@
 // import React from "react";
 import { motion } from "framer-motion";
-import { Clock, Mail, ShieldCheck, Wrench } from "lucide-react";
+import { Clock, Mail, ShieldCheck, Wrench, Car } from "lucide-react";
+
 import { Section } from "./Section";
 
 export function Features() {
@@ -30,6 +31,7 @@ export function Features() {
   return (
     <Section
       id="features"
+      icon={<Car />}
       eyebrow="RGF Autorepuestos"
       title="Calidad y confianza en cada pieza."
       description="Nos enfocamos en ofrecer repuestos confiables y un servicio que realmente marque la diferencia."

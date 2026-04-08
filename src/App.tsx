@@ -27,9 +27,10 @@ function HomePage() {
       <Header />
       <CartDrawer />
       <Hero />
-      <PopularSection />
-      <BestSellersSection />
+{/*   <PopularSection />
+      <BestSellersSection />     
       <RecentSection />
+      */}  
       <Features />
       <Newsletter />
       <Footer />
