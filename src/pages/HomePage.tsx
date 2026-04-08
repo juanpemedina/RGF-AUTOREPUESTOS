@@ -1,12 +1,11 @@
-
 // Home page components
 import { Header } from "../components/layout/Header";
 import { Hero } from "../components/home/Hero";
-import {
+/*import {
   PopularSection,
   BestSellersSection,
   RecentSection,
-} from "../components/home/Collections";
+} from "../components/home/Collections";*/
 import { Features } from "../components/home/Features";
 import { Newsletter } from "../components/home/Newsletter";
 import { Footer } from "../components/layout/Footer";

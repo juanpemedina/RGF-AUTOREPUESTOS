@@ -27,11 +27,11 @@ export function Section({
         <div className="mx-auto max-w-2xl text-center">
           {eyebrow && (
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
-              {React.isValidElement(icon)
-              ? React.cloneElement(icon, {
-                className: "h-3.5 w-3.5 text-[#981a20]",
-                })
-              : icon ?? <Sparkles className="h-3.5 w-3.5 text-[#981a20]" />}
+              {React.isValidElement<{ className?: string }>(icon)
+                ? React.cloneElement(icon, {
+                    className: `h-3.5 w-3.5 text-[#981a20] ${icon.props.className ?? ""}`.trim(),
+                  })
+                : icon ?? <Sparkles className="h-3.5 w-3.5 text-[#981a20]" />}
               <span>{eyebrow}</span>
             </div>
           )}

@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";*/
 import { AnimatePresence, motion } from "framer-motion";
 import { X, Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
 import { useCart } from "./CartContext";
