@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-4 shadow">
+    <nav aria-label="Principal" className="flex justify-between items-center px-6 py-4 shadow">
       <h1 className="font-title text-xl text-primary">
         RGF Autorepuestos
       </h1>
