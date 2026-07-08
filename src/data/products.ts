@@ -1,12 +1,7 @@
 export type Category =
-  | "Frenos"
-  | "Suspensión"
-  | "Motor"
-  | "Eléctrico"
-  | "Filtros"
-  | "Transmisión";
+  | "Motor";
 
-export type Brand = "Castrol" | "Monroe" | "Bosch" | "NGK";
+export type Brand = "SENFINECO" | "MOTUL";
 
 export type Product = {
   id: number;
@@ -20,331 +15,95 @@ export type Product = {
 };
 
 export const CATEGORIES: Category[] = [
-  "Frenos",
-  "Suspensión",
   "Motor",
-  "Eléctrico",
-  "Filtros",
-  "Transmisión",
 ];
 
-export const BRANDS: Brand[] = ["Castrol", "Monroe", "Bosch", "NGK"];
+export const BRANDS: Brand[] = ["SENFINECO", "MOTUL"];
 
 export const products: Product[] = [
-  // ── FRENOS ──────────────────────────────────────────────────────────────────
   {
     id: 1,
-    name: "Pastillas de freno delanteras",
-    price: 499,
+    name: "SENFINECO FUEL INJECTOR CLEANER 24X300ML LIMPIA INYECTORES PARA GASOLINA",
+    price: 1,
     image:
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop",
-    tags: ["bestseller"],
-    addedAt: "2025-09-20",
-    category: "Frenos",
-    brand: "Bosch",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
+    tags: ["aditivo"],
+    addedAt: "2026-07-07",
+    category: "Motor",
+    brand: "SENFINECO",
   },
   {
     id: 2,
-    name: "Pastillas de freno traseras",
-    price: 449,
+    name: "SENFINECO MAXCLEANE FUEL SYSTEM CLEANER 24X300ML LIMPIADOR DEL SISTEMA DE COMBUSTIBLE",
+    price: 1,
     image:
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-10-01",
-    category: "Frenos",
-    brand: "Bosch",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
+    tags: ["aditivo"],
+    addedAt: "2026-07-07",
+    category: "Motor",
+    brand: "SENFINECO",
   },
   {
     id: 3,
-    name: "Disco de freno ventilado",
-    price: 799,
+    name: "SENFINECO POWER UP OCTANE BOOSTER 24X300ML AUMENTADOR DE OCTANAJE",
+    price: 1,
     image:
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-10-10",
-    category: "Frenos",
-    brand: "Bosch",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
+    tags: ["aditivo"],
+    addedAt: "2026-07-07",
+    category: "Motor",
+    brand: "SENFINECO",
   },
   {
     id: 4,
-    name: "Líquido de frenos DOT4",
-    price: 199,
+    name: "MOTUL 4100 SYN-NERGY SPEC 10W40 4X5L SEMI-SINTETICO",
+    price: 1,
     image:
       "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-10-12",
-    category: "Frenos",
-    brand: "Castrol",
+    tags: ["lubricante"],
+    addedAt: "2026-07-07",
+    category: "Motor",
+    brand: "MOTUL",
   },
-
-  // ── SUSPENSIÓN ───────────────────────────────────────────────────────────────
   {
     id: 5,
-    name: "Amortiguadores delanteros",
-    price: 899,
+    name: "MOTUL 8100 ECO-CLEAN 0W20 12X1L 100% SINTET",
+    price: 1,
     image:
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-10-01",
-    category: "Suspensión",
-    brand: "Monroe",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
+    tags: ["lubricante"],
+    addedAt: "2026-07-07",
+    category: "Motor",
+    brand: "MOTUL",
   },
   {
     id: 6,
-    name: "Amortiguadores traseros",
-    price: 849,
+    name: "MOTUL 8100 ECO-LITE 5W20 12X1L 100% SINTET",
+    price: 1,
     image:
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-10-02",
-    category: "Suspensión",
-    brand: "Monroe",
+      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
+    tags: ["lubricante"],
+    addedAt: "2026-07-07",
+    category: "Motor",
+    brand: "MOTUL",
   },
   {
     id: 7,
-    name: "Kit de suspensión completo",
-    price: 1899,
-    image:
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular", "bestseller"],
-    addedAt: "2025-10-07",
-    category: "Suspensión",
-    brand: "Monroe",
-  },
-  {
-    id: 8,
-    name: "Barra estabilizadora",
-    price: 650,
-    image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-28",
-    category: "Suspensión",
-    brand: "Monroe",
-  },
-
-  // ── MOTOR ────────────────────────────────────────────────────────────────────
-  {
-    id: 9,
-    name: "Aceite sintético 5W-30",
-    price: 699,
+    name: "MOTUL 8100 ECO-LITE 5W30 12X1L 100% SINTET",
+    price: 1,
     image:
       "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular", "bestseller"],
-    addedAt: "2025-10-03",
+    tags: ["lubricante"],
+    addedAt: "2026-07-07",
     category: "Motor",
-    brand: "Castrol",
-  },
-  {
-    id: 10,
-    name: "Aceite sintético 10W-40",
-    price: 650,
-    image:
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-10-04",
-    category: "Motor",
-    brand: "Castrol",
-  },
-  {
-    id: 11,
-    name: "Empaque de cabeza de motor",
-    price: 1100,
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-18",
-    category: "Motor",
-    brand: "Bosch",
-  },
-  {
-    id: 12,
-    name: "Correa de distribución",
-    price: 850,
-    image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=1200&auto=format&fit=crop",
-    tags: ["bestseller"],
-    addedAt: "2025-09-22",
-    category: "Motor",
-    brand: "Bosch",
-  },
-  {
-    id: 13,
-    name: "Termostato de motor",
-    price: 380,
-    image:
-      "https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-10-09",
-    category: "Motor",
-    brand: "Bosch",
-  },
-
-  // ── ELÉCTRICO ────────────────────────────────────────────────────────────────
-  {
-    id: 14,
-    name: "Batería automotriz 60Ah",
-    price: 1499,
-    image:
-      "https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1200&auto=format&fit=crop",
-    tags: ["bestseller"],
-    addedAt: "2025-09-15",
-    category: "Eléctrico",
-    brand: "Bosch",
-  },
-  {
-    id: 15,
-    name: "Batería automotriz 45Ah",
-    price: 1199,
-    image:
-      "https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-16",
-    category: "Eléctrico",
-    brand: "Bosch",
-  },
-  {
-    id: 16,
-    name: "Bujías de iridio",
-    price: 299,
-    image:
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?q=80&w=1200&auto=format&fit=crop",
-    tags: ["bestseller"],
-    addedAt: "2025-10-06",
-    category: "Eléctrico",
-    brand: "NGK",
-  },
-  {
-    id: 17,
-    name: "Bujías de platino",
-    price: 249,
-    image:
-      "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-10-05",
-    category: "Eléctrico",
-    brand: "NGK",
-  },
-  {
-    id: 18,
-    name: "Sensor de oxígeno",
-    price: 520,
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-30",
-    category: "Eléctrico",
-    brand: "Bosch",
-  },
-  {
-    id: 19,
-    name: "Alternador reconstruido",
-    price: 1350,
-    image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-25",
-    category: "Eléctrico",
-    brand: "Bosch",
-  },
-
-  // ── FILTROS ───────────────────────────────────────────────────────────────────
-  {
-    id: 20,
-    name: "Filtro de aire de motor",
-    price: 199,
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-10-05",
-    category: "Filtros",
-    brand: "Bosch",
-  },
-  {
-    id: 21,
-    name: "Filtro de aceite",
-    price: 149,
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
-    tags: ["bestseller", "popular"],
-    addedAt: "2025-10-08",
-    category: "Filtros",
-    brand: "Castrol",
-  },
-  {
-    id: 22,
-    name: "Filtro de combustible",
-    price: 229,
-    image:
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-27",
-    category: "Filtros",
-    brand: "Bosch",
-  },
-  {
-    id: 23,
-    name: "Filtro de habitáculo",
-    price: 179,
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-10-11",
-    category: "Filtros",
-    brand: "Bosch",
-  },
-
-  // ── TRANSMISIÓN ───────────────────────────────────────────────────────────────
-  {
-    id: 24,
-    name: "Radiador de motor",
-    price: 1299,
-    image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=1200&auto=format&fit=crop",
-    tags: ["bestseller", "popular"],
-    addedAt: "2025-09-10",
-    category: "Transmisión",
-    brand: "Castrol",
-  },
-  {
-    id: 25,
-    name: "Kit de embrague completo",
-    price: 2100,
-    image:
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1200&auto=format&fit=crop",
-    tags: ["popular"],
-    addedAt: "2025-09-12",
-    category: "Transmisión",
-    brand: "Monroe",
-  },
-  {
-    id: 26,
-    name: "Aceite para transmisión ATF",
-    price: 450,
-    image:
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-10-13",
-    category: "Transmisión",
-    brand: "Castrol",
-  },
-  {
-    id: 27,
-    name: "Sello de transmisión",
-    price: 320,
-    image:
-      "https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1200&auto=format&fit=crop",
-    tags: [],
-    addedAt: "2025-09-29",
-    category: "Transmisión",
-    brand: "Bosch",
+    brand: "MOTUL",
   },
 ];
 
 export const navLinks = [
   {href: "/#hero", label: "Inicio" },
-  {href: "/#popular", label: "Populares" },
-  { href: "/#bestsellers", label: "Más Vendidos" },
+  /*{href: "/#popular", label: "Populares" },
+  { href: "/#bestsellers", label: "Más Vendidos" },*/
   { href: "/#features", label: "¿Por qué nosotros?" },
   { href: "/#ubicacion", label: "Ubicación" },
 ];
