@@ -11,7 +11,6 @@ import { Newsletter } from "../components/home/Newsletter";
 import { Footer } from "../components/layout/Footer";
 import { BackToTop } from "../components/BackToTop";
 import { CartDrawer } from "../components/CartDrawer";
-import { BrandCarousel } from "../components/home/BrandCarousel";
 
 export function HomePage() {
   return (
@@ -22,7 +21,6 @@ export function HomePage() {
       <Header />
       <CartDrawer />
       <Hero />
-      <BrandCarousel />
 {/*   <PopularSection />
       <BestSellersSection />     
       <RecentSection />
