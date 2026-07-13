@@ -1,6 +1,5 @@
 {
   "name": "wristco",
-  "homepage": "https://juanpemedina.github.io/RGF-AUTOREPUESTOS/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,14 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -a -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "flowbite": "^3.1.2",
     "framer-motion": "^12.23.22",
-    "gh-pages": "^6.3.0",
     "lucide-react": "^0.545.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

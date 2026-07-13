@@ -1,7 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, BookOpenText, ShoppingCart, X } from "lucide-react";
-import { Link } from "react-router-dom";
 import { navLinks } from "../../data/products";
 import logo from "../../assets/logo_rgf.png";
 import { useCart } from "../CartContext";
@@ -15,35 +14,35 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <img
             src={logo}
             alt="RGF Autorepuestos"
             className="h-10 w-auto object-contain"
           />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((l) => (
-            <Link
+            <a
               key={l.href}
-              to={l.href}
+              href={l.href}
               className="text-sm font-medium text-gray-700 hover:text-[#981a20] transition"
             >
               {l.label}
-            </Link>
+            </a>
           ))}
 
           {/* Catálogo Productos */}
-          <Link
-            to="/catalogo"
+          <a
+            href="/catalogo"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl bg-[#981a20] px-4 py-2 text-sm font-semibold text-white hover:bg-[#133e87] transition"
           >
             Catálogo
-          </Link>
+          </a>
 
           {/* Cart button */}
           <button
