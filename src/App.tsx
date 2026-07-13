@@ -7,7 +7,7 @@ import { CatalogPage } from "./pages/CatalogPage";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/RGF-AUTOREPUESTOS">      
+    <BrowserRouter>
       <CartProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
