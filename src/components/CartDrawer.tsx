@@ -3,8 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
 import { useCart } from "./CartContext";
 import { formatPrice } from "../data/products";
-
-const WHATSAPP_NUMBER = "584242756396"; // ← Cambia por tu número jensi
+import { WHATSAPP_NUMBER } from "../data/contact";
 
 function buildWhatsAppMessage(
   items: { product: { name: string; price: number }; quantity: number }[],
