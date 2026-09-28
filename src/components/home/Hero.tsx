@@ -1,6 +1,7 @@
 /*import React from "react";*/
 import { motion } from "framer-motion";
 import { ChevronRight, ShieldCheck, Wrench } from "lucide-react";
+import { WHATSAPP_NUMBER } from "../../data/contact";
 
 export function Hero() {
   return (
@@ -40,7 +41,7 @@ export function Hero() {
           {/* CTA */}
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20cotizar%20un%20repuesto"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20quiero%20cotizar%20un%20repuesto`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-[#981a20] px-5 py-3 text-white font-semibold hover:bg-[#133e87] transition"

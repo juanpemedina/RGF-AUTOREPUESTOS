@@ -1,6 +1,7 @@
 /*import React from "react";*/
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "../../assets/logo_rgf.png";
+import { WHATSAPP_NUMBER } from "../../data/contact";
 
 export function Footer() {
   return (
@@ -26,12 +27,12 @@ export function Footer() {
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-[#981a20]" />
               <a
-                href="https://wa.me/521XXXXXXXXXX"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#981a20]"
               >
-                WhatsApp
+                0422-5950978
               </a>
             </li>
 
