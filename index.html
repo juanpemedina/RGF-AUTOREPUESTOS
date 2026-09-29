@@ -39,6 +39,17 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get("p");
+
+      if (redirectPath) {
+        const base = "/RGF-AUTOREPUESTOS/";
+        const query = params.get("q");
+        const target = `${base}${redirectPath.replace(/^\//, "")}${query ? `?${query}` : ""}${window.location.hash}`;
+        window.history.replaceState(null, "", target);
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

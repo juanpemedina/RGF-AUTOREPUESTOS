@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RGF Autorepuestos</title>
+    <script>
+      const base = "/RGF-AUTOREPUESTOS/";
+      const path = window.location.pathname.startsWith(base)
+        ? window.location.pathname.slice(base.length)
+        : window.location.pathname.replace(/^\//, "");
+      const query = window.location.search.slice(1);
+      const redirect = `${base}?p=/${path}${query ? `&q=${encodeURIComponent(query)}` : ""}${window.location.hash}`;
+      window.location.replace(redirect);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, ShieldCheck, Wrench } from "lucide-react";
 import { WHATSAPP_NUMBER } from "../../data/contact";
+import { Link } from "react-router-dom";
 
 export function Hero() {
   return (
@@ -49,12 +50,12 @@ export function Hero() {
               Cotizar ahora <ChevronRight className="h-4 w-4" />
             </a>
 
-            <a
-              href="/catalogo"
+            <Link
+              to="/catalogo"
               className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 font-medium hover:bg-gray-100"
             >
               Ver productos
-            </a>
+            </Link>
           </div>
 
           {/* Trust points */}
