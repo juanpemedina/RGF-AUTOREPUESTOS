@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 
 export function Footer() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <footer className="border-t bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
@@ -69,12 +71,12 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-gray-600">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <Link 
-                  to={l.href} 
+                <a
+                  href={`${baseUrl}${l.href.replace(/^\/+/, "")}`}
                   className="hover:text-[#981a20] transition-colors duration-150"
                 >
                   {l.label}
-                </Link>
+                </a>
               </li>
               
             ))}

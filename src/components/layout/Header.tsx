@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { count, openCart } = useCart();
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md border-b">
@@ -26,13 +27,13 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((l) => (
-            <Link
+            <a
               key={l.href}
-              to={l.href}
+              href={`${baseUrl}${l.href.replace(/^\/+/, "")}`}
               className="text-sm font-medium text-gray-700 hover:text-[#981a20] transition"
             >
               {l.label}
-            </Link>
+            </a>
           ))}
 
           {/* Catálogo Productos */}
@@ -102,14 +103,14 @@ export function Header() {
           >
             <div className="space-y-2 px-4 py-4">
               {navLinks.map((l) => (
-                <Link
+                <a
                   key={l.href}
-                  to={l.href}
+                  href={`${baseUrl}${l.href.replace(/^\/+/, "")}`}
                   onClick={() => setMobileOpen(false)}
                   className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-50"
                 >
                   {l.label}
-                </Link>
+                </a>
               ))}
 
               {/* CTA Mobile */}
