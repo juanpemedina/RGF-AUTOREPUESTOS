@@ -8,13 +8,14 @@ import { useCart } from "../CartContext";
 export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { count, openCart } = useCart();
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md border-b">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3">
+        <a href={baseUrl} className="flex items-center gap-3">
           <img
             src={logo}
             alt="RGF Autorepuestos"
@@ -36,7 +37,7 @@ export function Header() {
 
           {/* Catálogo Productos */}
           <a
-            href="/catalogo"
+            href={`${baseUrl}catalogo`}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl bg-[#981a20] px-4 py-2 text-sm font-semibold text-white hover:bg-[#133e87] transition"
@@ -115,7 +116,7 @@ export function Header() {
 
               {/* CTA Mobile */}
               <a
-                href="/catalogo"
+                href={`${baseUrl}catalogo`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#981a20] px-3 py-2 text-sm font-semibold text-white"

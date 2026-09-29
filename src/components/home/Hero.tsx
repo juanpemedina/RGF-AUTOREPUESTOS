@@ -4,6 +4,8 @@ import { ChevronRight, ShieldCheck, Wrench } from "lucide-react";
 import { WHATSAPP_NUMBER } from "../../data/contact";
 
 export function Hero() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section id="hero" className="relative overflow-hidden">
       {/* Background */}
@@ -50,7 +52,7 @@ export function Hero() {
             </a>
 
             <a
-              href="/catalogo"
+              href={`${baseUrl}catalogo`}
               className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 font-medium hover:bg-gray-100"
             >
               Ver productos
