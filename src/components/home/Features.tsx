@@ -33,7 +33,7 @@ export function Features() {
       id="features"
       icon={<Car />}
       eyebrow="RGF Autorepuestos"
-      title="Calidad y confianza en cada pieza."
+      title="Calidad y confianza en cada pieza"
       description="Nos enfocamos en ofrecer repuestos confiables y un servicio que realmente marque la diferencia."
     >
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

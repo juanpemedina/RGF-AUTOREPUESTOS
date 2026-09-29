@@ -50,7 +50,7 @@ export function Hero() {
             </a>
 
             <a
-              href="#productos"
+              href="/catalogo"
               className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 font-medium hover:bg-gray-100"
             >
               Ver productos

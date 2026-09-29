@@ -105,7 +105,7 @@ export const navLinks = [
   /*{href: "/#popular", label: "Populares" },
   { href: "/#bestsellers", label: "Más Vendidos" },*/
   { href: "/#features", label: "¿Por qué nosotros?" },
-  { href: "/#ubicacion", label: "Ubicación" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export const formatPrice = (n: number) =>

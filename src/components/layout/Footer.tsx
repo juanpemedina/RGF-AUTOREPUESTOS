@@ -1,7 +1,9 @@
 /*import React from "react";*/
-import { MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Phone, Mail } from "lucide-react";
 import logo from "../../assets/logo_rgf.png";
 import { WHATSAPP_NUMBER } from "../../data/contact";
+import { navLinks } from "../../data/products";
+
 
 export function Footer() {
   return (
@@ -32,43 +34,48 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-[#981a20]"
               >
-                0422-5950978
+                0422 5950978
               </a>
             </li>
 
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-[#981a20]" />
-              contacto@rgf.com
+              <a
+                href="mailto:contacto@rgfautorepuestos.com"
+                className="hover:text-[#981a20]"
+              >
+                contacto@rgfautorepuestos.com
+              </a>
             </li>
 
             <li className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 mt-0.5 text-[#981a20]" />
-              <span>
-                direccion , caracas, Venezuela...
-              </span>
+              <Instagram className="h-4 w-4 mt-0.5 text-[#981a20]" />
+              <a
+                href="https://www.instagram.com/autorepuestos_rgf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#981a20]"
+              >
+                @AUTOREPUESTOS_RGF
+              </a>
             </li>
           </ul>
         </div>
 
-        {/* Navegación */}
+        {/* Navegación */}             
         <div>
           <h4 className="text-sm font-semibold">Enlaces</h4>
           <ul className="mt-3 space-y-2 text-sm text-gray-600">
-            <li>
-              <a href="#popular" className="hover:text-[#981a20]">
-                Productos
-              </a>
-            </li>
-            <li>
-              <a href="#features" className="hover:text-[#981a20]">
-                ¿Por qué nosotros?
-              </a>
-            </li>
-            <li>
-              <a href="#ubicacion" className="hover:text-[#981a20]">
-                Ubicación
-              </a>
-            </li>
+            {navLinks.map((l) => (
+              <li key={l.href}>
+                <a 
+                  href={l.href} 
+                  className="hover:text-[#981a20] transition-colors duration-150"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
