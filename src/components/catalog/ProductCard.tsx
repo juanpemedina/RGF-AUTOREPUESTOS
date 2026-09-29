@@ -39,16 +39,16 @@ export function ProductCard({ product, index = 0, eager = false }: ProductCardPr
       {...animationProps}
       className="group relative flex flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-xl"
     >
-      {/* ── SECCIÓN IMAGEN ────────────────────────────────────────── */}
-      <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-gray-50">
+      {/* ── SECCIÓN IMAGEN (Ajustada sin zoom/recorte) ────────────────────────── */}
+      <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden bg-gray-50 p-4">
         <img
           src={product.image}
           alt={product.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-        {/* Tags y Marca (Más pequeños en móvil) */}
+        {/* Tags y Marca */}
         <div className="absolute left-2 top-2 flex flex-wrap gap-1 sm:left-3 sm:top-3 sm:gap-1.5">
           {product.tags?.slice(0, 1).map((t) => (
             <span
@@ -71,12 +71,12 @@ export function ProductCard({ product, index = 0, eager = false }: ProductCardPr
           {product.category}
         </span>
 
-        {/* Título y Precio (Adaptable a 2 columnas) */}
-        <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
-          <h3 className="line-clamp-2 text-xs font-bold leading-tight text-gray-900 sm:text-base sm:font-semibold min-h-[2rem] sm:min-h-0">
+        {/* Título (Sin corte) y Precio */}
+        <div className="mb-3 flex flex-col justify-between gap-2 sm:flex-row sm:items-start sm:gap-3">
+          <h3 className="text-xs font-bold leading-tight text-gray-900 sm:text-base sm:font-semibold">
             {product.name}
           </h3>
-          <div className="flex items-baseline gap-1 sm:flex-col sm:items-end sm:gap-0">
+          <div className="flex shrink-0 items-baseline gap-1 sm:flex-col sm:items-end sm:gap-0">
             <p className="text-sm font-bold text-[#981a20] sm:text-lg sm:text-gray-900">
               {formatPrice(product.price)}
             </p>
@@ -85,13 +85,11 @@ export function ProductCard({ product, index = 0, eager = false }: ProductCardPr
         </div>
 
         {/* ── BOTÓN DE ACCIÓN ───────────────────────────────────────── */}
-        <div className="mt-auto">
+        <div className="mt-auto pt-2">
           <button
             onClick={handleAdd}
             className={`flex w-full items-center justify-center gap-2 rounded-lg px-2 py-2 text-xs font-semibold text-white transition-all duration-300 sm:rounded-xl sm:px-4 sm:py-2.5 sm:text-sm ${
-              added
-                ? "bg-green-600"
-                : "bg-[#981a20] hover:bg-[#133e87]"
+              added ? "bg-green-600" : "bg-[#981a20] hover:bg-[#133e87]"
             }`}
           >
             {added ? (

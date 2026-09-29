@@ -75,7 +75,11 @@ export function Footer() {
                   {l.label}
                 </a>
               </li>
+              
             ))}
+            <li>
+                <a href="/catalogo">Catálogo</a>
+            </li>
           </ul>
         </div>
       </div>
