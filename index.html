@@ -35,11 +35,22 @@
       content="Repuestos automotrices en Caracas. Cotiza fácil y rápido."
     />
     <meta name="twitter:image" content="/RGF-AUTOREPUESTOS/logo_rgf.png" />
-    <script type="module" crossorigin src="/RGF-AUTOREPUESTOS/assets/index-CSNujdym.js"></script>
+    <script type="module" crossorigin src="/RGF-AUTOREPUESTOS/assets/index-1J3aAEe_.js"></script>
     <link rel="stylesheet" crossorigin href="/RGF-AUTOREPUESTOS/assets/index-DLeP_Vz3.css">
   </head>
 
   <body>
     <div id="root"></div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get("p");
+
+      if (redirectPath) {
+        const base = "/RGF-AUTOREPUESTOS/";
+        const query = params.get("q");
+        const target = `${base}${redirectPath.replace(/^\//, "")}${query ? `?${query}` : ""}${window.location.hash}`;
+        window.history.replaceState(null, "", target);
+      }
+    </script>
   </body>
 </html>
