@@ -3,6 +3,7 @@ import { Instagram, Phone, Mail } from "lucide-react";
 import logo from "../../assets/logo_rgf.png";
 import { WHATSAPP_NUMBER } from "../../data/contact";
 import { navLinks } from "../../data/products";
+import { Link } from "react-router-dom";
 
 
 export function Footer() {
@@ -68,17 +69,17 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-gray-600">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a 
-                  href={l.href} 
+                <Link 
+                  to={l.href} 
                   className="hover:text-[#981a20] transition-colors duration-150"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
               
             ))}
             <li>
-                <a href="/catalogo">Catálogo</a>
+                <Link to="/catalogo">Catálogo</Link>
             </li>
           </ul>
         </div>

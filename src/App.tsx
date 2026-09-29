@@ -11,7 +11,7 @@ export default function App() {
       <CartProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/RGF-AUTOREPUESTOS/catalogo" element={<CatalogPage />} />
+          <Route path="/catalogo" element={<CatalogPage />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>
