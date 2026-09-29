@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./components/CartContext";
 import { HomePage } from "./pages/HomePage";
 
@@ -6,16 +6,14 @@ import { HomePage } from "./pages/HomePage";
 import { CatalogPage } from "./pages/CatalogPage";
 
 export default function App() {
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
-
   return (
-    <BrowserRouter basename={basename || "/"}>
+    <HashRouter>
       <CartProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalogo" element={<CatalogPage />} />
         </Routes>
       </CartProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

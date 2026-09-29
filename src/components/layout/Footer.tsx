@@ -3,11 +3,19 @@ import { Instagram, Phone, Mail } from "lucide-react";
 import logo from "../../assets/logo_rgf.png";
 import { WHATSAPP_NUMBER } from "../../data/contact";
 import { navLinks } from "../../data/products";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export function Footer() {
-  const baseUrl = import.meta.env.BASE_URL;
+  const navigate = useNavigate();
+
+  const goToSection = (href: string) => {
+    const sectionId = href.split("#")[1];
+    navigate("/");
+    window.setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   return (
     <footer className="border-t bg-white">
@@ -71,12 +79,12 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-gray-600">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a
-                  href={`${baseUrl}${l.href.replace(/^\/+/, "")}`}
+                <button
+                  onClick={() => goToSection(l.href)}
                   className="hover:text-[#981a20] transition-colors duration-150"
                 >
                   {l.label}
-                </a>
+                </button>
               </li>
               
             ))}
