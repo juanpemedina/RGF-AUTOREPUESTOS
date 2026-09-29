@@ -6,8 +6,6 @@ import { navLinks } from "../../data/products";
 
 
 export function Footer() {
-  const baseUrl = import.meta.env.BASE_URL;
-
   return (
     <footer className="border-t bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
@@ -80,7 +78,7 @@ export function Footer() {
               
             ))}
             <li>
-                <a href={`${baseUrl}catalogo`}>Catálogo</a>
+                <a href="/catalogo">Catálogo</a>
             </li>
           </ul>
         </div>

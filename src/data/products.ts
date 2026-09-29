@@ -101,14 +101,12 @@ export const products: Product[] = [
   },
 ];
 
-const baseUrl = import.meta.env.BASE_URL;
-
 export const navLinks = [
-  {href: `${baseUrl}#hero`, label: "Inicio" },
+  {href: "/#hero", label: "Inicio" },
   /*{href: "/#popular", label: "Populares" },
   { href: "/#bestsellers", label: "Más Vendidos" },*/
-  { href: `${baseUrl}#features`, label: "¿Por qué nosotros?" },
-  { href: `${baseUrl}#contacto`, label: "Contacto" },
+  { href: "/#features", label: "¿Por qué nosotros?" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export const formatPrice = (n: number) =>

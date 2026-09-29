@@ -6,10 +6,8 @@ import { HomePage } from "./pages/HomePage";
 import { CatalogPage } from "./pages/CatalogPage";
 
 export default function App() {
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
-
   return (
-    <BrowserRouter basename={basename || "/"}>
+    <BrowserRouter>
       <CartProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
